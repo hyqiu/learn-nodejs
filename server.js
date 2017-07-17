@@ -74,6 +74,12 @@ app.get('/about', (req, res) => {
 // send back JSON
 // error handling request
 
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Portfolio Page',
+  });
+});
+
 app.get('/bad', (req, res) => {
   res.send({
     errorMessage: 'Unable to handle request',
@@ -83,3 +89,11 @@ app.get('/bad', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is up on ${port}`);
 });
+
+// add a new project page to website
+// register new url
+// create url /projects
+// Portfolio page
+// Links
+// Commit github
+// Push it to heroku
