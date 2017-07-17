@@ -27,20 +27,20 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => {
-  res.render('maintenance.hbs');
-  // no next : the site freezes on one page
-})
+// app.use((req, res, next) => {
+//   res.render('maintenance.hbs');
+//   // no next : the site freezes on one page
+// })
 
 app.use(express.static(__dirname + '/public'));
 
 hbs.registerHelper('getCurrentYear', () => {
   return new Date().getFullYear()
-})
+});
 
 hbs.registerHelper('screamIt', (text) =>{
   return text.toUpperCase();
-})
+});
 
 app.get('/', (req, res) => {
 // req : stores information (header, body, method, path...)
